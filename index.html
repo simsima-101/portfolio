@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Simsima Gafoor • Flutter Developer</title>
+  <meta name="description" content="Flutter developer portfolio: apps, skills, contact." />
+  <meta name="theme-color" content="#0ea5e9" />
+  <style>
+    :root{
+      --bg:#0b1020; --card:#121833; --muted:#9aa4bf; --text:#eaf2ff;
+      --brand:#0ea5e9; --accent:#f43f5e; --radius:16px; --shadow:0 10px 25px rgba(0,0,0,.35); --maxw:1080px;
+    }
+    *{box-sizing:border-box} html,body{margin:0;height:100%;background:radial-gradient(1200px 600px at 80% -10%,rgba(14,165,233,.18),transparent),radial-gradient(800px 400px at -10% 10%,rgba(244,63,94,.14),transparent),var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial}
+    a{color:var(--brand);text-decoration:none} a:hover{text-decoration:underline}
+    .wrap{max-width:var(--maxw);margin-inline:auto;padding:28px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .avatar{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--brand),var(--accent));display:grid;place-items:center;color:#fff;font-weight:700;letter-spacing:.5px}
+    nav{display:flex;gap:12px;flex-wrap:wrap}
+    nav a{padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06)}
+    .hero{margin:56px 0;display:grid;grid-template-columns:1.2fr .8fr;gap:28px}
+    .hero h1{font-size:clamp(28px,5vw,44px);line-height:1.15;margin:0}
+    .hero p{color:var(--muted);margin:10px 0 22px}
+    .cta{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:12px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.06);box-shadow:var(--shadow)}
+    .btn.primary{background:linear-gradient(135deg,var(--brand),#22d3ee);border:none}
+    .btn:hover{filter:brightness(1.05)}
+    .mock{border-radius:var(--radius);border:1px solid rgba(255,255,255,.08);background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.02));min-height:260px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+    .mock::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg, rgba(255,255,255,.04) 0 2px, transparent 2px 6px)}
+    .section{margin:64px 0}.section h2{font-size:22px;margin:0 0 12px}.section p.lead{color:var(--muted);margin:0 0 22px}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
+    .card{grid-column:span 6;padding:18px;border-radius:var(--radius);background:var(--card);border:1px solid rgba(255,255,255,.06);box-shadow:var(--shadow)}
+    .card h3{margin:0 0 6px;font-size:18px}.meta{font-size:13px;color:var(--muted)}
+    .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+    .chip{font-size:12px;padding:6px 8px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08)}
+    .skills{display:flex;flex-wrap:wrap;gap:10px}.skill{padding:10px 12px;border-radius:10px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08)}
+    .timeline{border-left:2px solid rgba(255,255,255,.12);padding-left:16px}.tl-item{margin:0 0 18px}.tl-item h4{margin:0}.tl-item .when{color:var(--muted);font-size:13px}
+    footer{margin:56px 0 24px;color:var(--muted);font-size:14px;text-align:center}
+    @media (max-width:900px){.hero{grid-template-columns:1fr}.card{grid-column:span 12}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="avatar">SG</div>
+        <div>
+          <strong>Simsima Gafoor</strong><br/>
+          <span class="meta">Flutter Developer • Dubai, UAE</span>
+        </div>
+      </div>
+      <nav>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+        <a href="resume.pdf" target="_blank">Resume ↓</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div>
+        <h1>Building fast, beautiful cross‑platform apps with <span style="color:var(--brand)">Flutter</span>.</h1>
+        <p>I craft production‑ready mobile apps (iOS, Android) and Flutter Web experiences. I care about clean architecture, performance, and a delightful UX.</p>
+        <div class="cta">
+          <a class="btn primary" href="#projects">🚀 View Projects</a>
+          <a class="btn" href="https://github.com/simsima-101" target="_blank">★ GitHub</a>
+          <a class="btn" href="https://www.linkedin.com/in/simsima-gafoor-530b36188" target="_blank">↗ LinkedIn</a>
+        </div>
+      </div>
+      <div class="mock" aria-hidden="true"></div>
+    </section>
+
+    <section id="projects" class="section">
+      <h2>Featured Projects</h2>
+      <p class="lead">Real apps that ship. Source links where possible.</p>
+
+      <div class="grid">
+        <article class="card">
+          <h3>Akarat – Real Estate Super App (UAE)</h3>
+          <div class="meta">Lead Flutter Dev & Product Architect • 2023 – Present • Akarat Real Estate Technologies LLC</div>
+          <p>Full‑featured real‑estate platform (iOS/Android) with Laravel REST backend for verified UAE listings, discovery, and lead management.</p>
+          <ul>
+            <li>Advanced search & filters (Buy/Rent/New Projects/Commercial), price, beds, amenities, furnished, area.</li>
+            <li>Favorites & saved searches for guest/logged‑in users (Provider + SharedPreferences) with API sync.</li>
+            <li>Property detail: image carousel, maps, amenities, payment plans, agent/agency info, call/WhatsApp/email.</li>
+            <li>Persistent bottom navigation; agents & agencies modules with pagination & caching.</li>
+            <li>Email OTP registration (Mailtrap), SecureStorage tokens; Trakheesi compliance support.</li>
+          </ul>
+          <div class="chips">
+            <span class="chip">Flutter 3.x</span><span class="chip">Provider</span><span class="chip">REST API (Laravel)</span><span class="chip">MySQL</span><span class="chip">Google Maps</span>
+          </div>
+          <p>Links: <a href="https://play.google.com/store/apps/details?id=com.akarat.drawerdemo" target="_blank">Android (Google Play)</a> · <a href="https://teams.live.com/l/message/19:uni01_p4eqeprppzemyarllndqr7tgzkzsl3dcilmnsdxwj2nqtafupaza@thread.v2/1753363340360?context=%7B%22contextType%22%3A%22chat%22%7D" target="_blank">iOS (current link)</a></p>
+          <p class="meta">Impact: 60% faster page load via caching; shipped to App Store & Play Store; active UAE user base.</p>
+        </article>
+
+        <article class="card">
+          <h3>EnWall – Smart Energy Management</h3>
+          <div class="meta">Flutter Developer & Product Designer • Riverpod • Realtime Charts</div>
+          <p>Energy monitoring app with real‑time solar/grid/battery data, interactive charts, and health indicators to optimize consumption.</p>
+          <ul>
+            <li>Live telemetry for generation, storage, and grid usage with animated charts.</li>
+            <li>Analytics dashboard for daily/monthly/total usage; color‑coded system health.</li>
+            <li>Supports solar, grid, and hybrid systems with responsive, accessible UI.</li>
+          </ul>
+          <div class="chips"><span class="chip">Flutter</span><span class="chip">Riverpod</span><span class="chip">fl_chart</span><span class="chip">HTTP</span></div>
+          <p><a href="https://github.com/simsima-101/enwall_flutter_app" target="_blank">Code (GitHub)</a></p>
+          <p class="meta">Outcome: Smooth real‑time UI and higher engagement via clear visual insights.</p>
+        </article>
+
+        <article class="card">
+          <h3>MovieApp – Real‑Time Movie Search</h3>
+          <div class="meta">Independent Project • Riverpod • Freezed • Dio • OMDb API</div>
+          <p>Clean‑architecture demo showcasing debounced search, detailed movie pages, and robust state/data layers.</p>
+          <ul>
+            <li>Instant search with debounced API calls; poster, synopsis, ratings, cast.</li>
+            <li>Riverpod for scalable state; Freezed models; Dio for networking & errors.</li>
+            <li>Responsive design for Android & iOS.</li>
+          </ul>
+          <div class="chips"><span class="chip">Flutter</span><span class="chip">Riverpod</span><span class="chip">Freezed</span><span class="chip">Dio</span></div>
+          <p><a href="https://github.com/simsima-101/movie_search_app" target="_blank">Code (GitHub)</a></p>
+        </article>
+
+        <article class="card">
+          <h3>Makeup Products Mini App</h3>
+          <div class="meta">Personal Project • Provider • REST</div>
+          <p>Lightweight e‑commerce showcase fetching products from a public API with clean, responsive UI and cart management.</p>
+          <ul>
+            <li>Product list & detail pages with images, description, and pricing.</li>
+            <li>Add‑to‑cart with Provider state; separation of concerns for scalability.</li>
+          </ul>
+          <div class="chips"><span class="chip">Flutter</span><span class="chip">Provider</span><span class="chip">HTTP</span></div>
+          <p><a href="https://github.com/simsima-101/Makeup-Products-App" target="_blank">Code (GitHub)</a></p>
+        </article>
+
+        <article class="card">
+          <h3>To‑Do App</h3>
+          <div class="meta">Personal Project • SQFlite • Animations</div>
+          <p>A polished task manager with offline persistence, smooth micro‑interactions, and focus on clean architecture.</p>
+          <ul>
+            <li>Local storage with SQLite; fast list interactions.</li>
+            <li>Thoughtful UI animations to guide user actions.</li>
+          </ul>
+          <div class="chips"><span class="chip">Flutter</span><span class="chip">SQFlite</span><span class="chip">Testing</span></div>
+          <p><a href="https://github.com/simsima-101/To_Do_App" target="_blank">Code (GitHub)</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills" class="section">
+      <h2>Skills</h2>
+      <p class="lead">I ship maintainable code and smooth UX.</p>
+      <div class="skills">
+        <span class="skill">Flutter • Dart</span>
+        <span class="skill">State Mgmt: Provider / Riverpod / Bloc</span>
+        <span class="skill">REST • GraphQL</span>
+        <span class="skill">Firebase (Auth, Firestore, FCM)</span>
+        <span class="skill">CI/CD (GitHub Actions)</span>
+        <span class="skill">Unit/Widget/Integration Testing</span>
+        <span class="skill">App Store / Play Console</span>
+        <span class="skill">Clean Architecture • SOLID</span>
+      </div>
+    </section>
+
+    <section id="experience" class="section">
+      <h2>Experience</h2>
+      <div class="timeline">
+        <div class="tl-item">
+          <h4>Flutter Developer • Bosporus Real Estate – Akarat App</h4>
+          <div class="when">02/2025 — Present · Dubai</div>
+          <ul>
+            <li>Shipped cross‑platform real estate app with full REST integration.</li>
+            <li>Firebase Auth + Google Sign‑In, Favorites with API sync, pagination, dynamic filtering.</li>
+            <li>Release management for App Store & Google Play; clean Git workflows.</li>
+          </ul>
+        </div>
+        <div class="tl-item">
+          <h4>Flutter Developer • Enercap Power Industries LLC</h4>
+          <div class="when">10/2024 — 01/2025 · Dubai</div>
+          <ul>
+            <li>Built cross‑platform apps and Windows desktop monitoring tools.</li>
+            <li>Integrated Modbus RTU/RS‑485; real‑time visualization for energy systems.</li>
+          </ul>
+        </div>
+        <div class="tl-item">
+          <h4>Software Engineer (Flutter) • UST</h4>
+          <div class="when">02/2022 — 04/2024 · Trivandrum</div>
+          <ul>
+            <li>Task Manager (+25% productivity), Incident Management (JIRA), payments & OTP/email flows.</li>
+          </ul>
+        </div>
+        <div class="tl-item">
+          <h4>Flutter Developer • Goyalo Safaris</h4>
+          <div class="when">10/2020 — 10/2021 · Kochi</div>
+          <ul>
+            <li>eCommerce app with secure payments; voice search for accessibility.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <p class="lead">Open to full‑time & freelance. Best way to reach me:</p>
+      <p>
+        <a class="btn primary" href="mailto:simsimagafoor1@gmail.com">✉ Email Me</a>
+        <a class="btn" href="https://wa.me/971581542529" target="_blank">💬 WhatsApp</a>
+      </p>
+      <p class="meta">Based in Dubai, open to remote. Average response time: 24h.</p>
+    </section>
+
+    <footer>© <span id="y"></span> Simsima Gafoor · Built with ♥ and Flutter energy</footer>
+  </div>
+  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+</body>
+</html>
