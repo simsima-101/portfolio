@@ -436,99 +436,41 @@
     }
 
     /* Phone Frame */
-    .phone-wrapper {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 28px;
-      position: relative;
-      z-index: 2;
-    }
+.phone {
+  position: relative;
+  width: 280px;
+  height: 570px;
+  background: linear-gradient(160deg, #2c2a33, #1a1820);
+  border-radius: 44px;
+  padding: 8px;                    /* was 12px – thinner bezel */
+  box-shadow:
+    0 0 0 2px #3d3a45,
+    0 25px 50px -12px rgba(0,0,0,.45),
+    0 0 40px rgba(105,90,166,.18);
+  transition: transform .4s ease, box-shadow .4s ease;
+}
 
-    .phone {
-      position: relative;
-      width: 280px;
-      height: 570px;
-      background: linear-gradient(160deg, #2c2a33, #1a1820);
-      border-radius: 44px;
-      padding: 12px;
-      box-shadow:
-        0 0 0 2px #3d3a45,
-        0 25px 50px -12px rgba(0,0,0,.45),
-        0 0 40px rgba(105,90,166,.18);
-      transition: transform .4s ease, box-shadow .4s ease;
-    }
+.phone-inner {
+  width: 100%;
+  height: 100%;
+  background: #000;
+  border-radius: 36px;              /* was 34px – matches new padding */
+  overflow: hidden;
+  position: relative;
+}
 
-    .phone:hover {
-      transform: translateY(-6px) scale(1.02);
-      box-shadow:
-        0 0 0 2px #3d3a45,
-        0 35px 60px -12px rgba(0,0,0,.5),
-        0 0 50px rgba(105,90,166,.25);
-    }
-
-    /* Side buttons */
-    .phone::before {
-      content: "";
-      position: absolute;
-      left: -3px;
-      top: 110px;
-      width: 3px;
-      height: 28px;
-      background: #3d3a45;
-      border-radius: 2px 0 0 2px;
-    }
-    .phone::after {
-      content: "";
-      position: absolute;
-      left: -3px;
-      top: 150px;
-      width: 3px;
-      height: 52px;
-      background: #3d3a45;
-      border-radius: 2px 0 0 2px;
-    }
-
-    .phone-inner {
-      width: 100%;
-      height: 100%;
-      background: #000;
-      border-radius: 34px;
-      overflow: hidden;
-      position: relative;
-    }
-
-    /* Dynamic Island */
-    .dynamic-island {
-      position: absolute;
-      top: 11px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 95px;
-      height: 28px;
-      background: #000;
-      border-radius: 20px;
-      z-index: 10;
-    }
-
-    .phone-screen {
-      width: 100%;
-      height: 100%;
-      background: #111;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
-
-    .phone-screen img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: top center;
-      transition: opacity .35s ease;
-    }
-
+/* Dynamic Island */
+.dynamic-island {
+  position: absolute;
+  top: 9px;                         /* slight tweak for thinner bezel */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 95px;
+  height: 28px;
+  background: #000;
+  border-radius: 20px;
+  z-index: 10;
+}
     /* Gallery Controls */
     .gallery-controls {
       display: flex;
@@ -832,20 +774,92 @@
     }
 
     @media (max-width: 600px) {
-      .section { padding: 70px 0; }
-      .section-heading { margin-bottom: 36px; }
-      .hero { min-height: auto; padding: 120px 0 70px; }
-      .services-grid,
-      .contact-grid { grid-template-columns: 1fr; }
-      .about-details { grid-template-columns: 1fr; }
-      .timeline { padding-left: 22px; }
-      .timeline-item::before { left: -30px; }
-      .education-card { flex-direction: column; gap: 14px; }
-      .phone { width: 220px; height: 450px; border-radius: 38px; }
-      .phone-inner { border-radius: 28px; }
-      .dynamic-island { width: 80px; height: 24px; top: 9px; }
-      .thumb { width: 42px; height: 74px; }
-    }
+  .section {
+    padding: 70px 0;
+  }
+
+  .section-heading {
+    margin-bottom: 36px;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 120px 0 70px;
+  }
+
+  .services-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-details {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline {
+    padding-left: 22px;
+  }
+
+  .timeline-item::before {
+    left: -30px;
+  }
+
+  .education-card {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  /* Akarat project showcase */
+  .device-showcase {
+    padding: 28px 18px;
+    border-radius: 18px;
+    gap: 28px;
+  }
+
+  .phone-wrapper {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .phone {
+    width: 220px;
+    max-width: 100%;
+    height: 450px;
+    margin: auto;
+    border-radius: 38px;
+  }
+
+  .phone-inner {
+    border-radius: 28px;
+  }
+
+  .dynamic-island {
+    width: 80px;
+    height: 24px;
+    top: 9px;
+  }
+
+  .gallery-thumbs {
+    width: 100%;
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: 8px;
+  }
+
+  .thumb {
+    width: 42px;
+    height: 74px;
+    flex-shrink: 0;
+  }
+
+  .showcase-info h3 {
+    font-size: 24px;
+  }
+
+  .showcase-info p {
+    font-size: 14px;
+  }
+}
 
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after {
