@@ -441,77 +441,38 @@
 
     /* Projects */
 
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 25px;
-    }
+    .project-gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  padding: 15px;
+  background: #f1eef9;
+}
 
-    .project-card {
-      border: 1px solid var(--border);
-      border-radius: 9px;
-      overflow: hidden;
-      background: white;
-      transition: .3s;
-    }
+.project-gallery a {
+  display: block;
+  overflow: hidden;
+  border-radius: 7px;
+  background: white;
+}
 
-    .project-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow);
-    }
+.project-gallery img {
+  width: 100%;
+  aspect-ratio: 3 / 5;
+  object-fit: cover;
+  display: block;
+  transition: transform .3s;
+}
 
-    .project-cover {
-      height: 215px;
-      display: grid;
-      place-items: center;
-      color: white;
-      font-size: 65px;
-      background: linear-gradient(135deg, #695aa6, #9888cf);
-      position: relative;
-    }
+.project-gallery a:hover img {
+  transform: scale(1.06);
+}
 
-    .project-card:nth-child(2) .project-cover {
-      background: linear-gradient(135deg, #354c74, #6888b5);
-    }
-
-    .project-card:nth-child(3) .project-cover {
-      background: linear-gradient(135deg, #477d85, #80b6a9);
-    }
-
-    .project-card:nth-child(4) .project-cover {
-      background: linear-gradient(135deg, #9b6d8e, #c49bb7);
-    }
-
-    .project-info { padding: 25px; }
-
-    .project-info h3 {
-      color: var(--heading);
-      font-size: 21px;
-      margin-bottom: 9px;
-    }
-
-    .project-info p { font-size: 14px; margin-bottom: 17px; }
-
-    .project-tech {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 7px;
-    }
-
-    .project-tech span {
-      font-size: 11px;
-      font-weight: 800;
-      background: #f1eef9;
-      color: var(--primary-dark);
-      padding: 5px 9px;
-      border-radius: 4px;
-    }
-
-    .project-note {
-      text-align: center;
-      font-size: 13px;
-      margin-top: 25px;
-    }
+@media (max-width: 600px) {
+  .project-gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
     /* Education */
 
@@ -962,22 +923,71 @@
       <div class="projects-grid">
 
         <article class="project-card">
-          <div class="project-cover">
-            <i class="fas fa-building"></i>
-          </div>
-          <div class="project-info">
-            <h3>Akarat – Real Estate App</h3>
-            <p>
-              A real-estate mobile application developed from scratch, with
-              property discovery, search and filters, favorites, enquiries,
-              saved alerts, maps and multilingual support.
-            </p>
-            <div class="project-tech">
-              <span>Flutter</span><span>Dart</span><span>BLoC/Cubit</span>
-              <span>REST APIs</span><span>Google Maps</span><span>Firebase</span>
-            </div>
-          </div>
-        </article>
+
+  <div class="project-gallery">
+
+    <a href="assets/images/akarat/akarat-home-screen.jpeg" target="_blank">
+      <img src="assets/images/akarat/akarat-home-screen.jpeg"
+           alt="Akarat home screen" loading="lazy">
+    </a>
+
+    <a href="assets/images/akarat/akarat-property-screen.jpeg" target="_blank">
+      <img src="assets/images/akarat/akarat-property-screen.jpeg"
+           alt="Akarat property listings" loading="lazy">
+    </a>
+
+    <a href="assets/images/akarat/akarat-property-details.jpeg" target="_blank">
+      <img src="assets/images/akarat/akarat-property-details.jpeg"
+           alt="Akarat property details" loading="lazy">
+    </a>
+
+    <a href="assets/images/akarat/akarat-favorites-screen.jpeg" target="_blank">
+      <img src="assets/images/akarat/akarat-favorites-screen.jpeg"
+           alt="Akarat favorites" loading="lazy">
+    </a>
+
+    <a href="assets/images/akarat/akarat-account-page.jpeg" target="_blank">
+      <img src="assets/images/akarat/akarat-account-page.jpeg"
+           alt="Akarat account page" loading="lazy">
+    </a>
+
+    <a href="assets/images/akarat/akarat-filter.jpeg" target="_blank">
+      <img src="assets/images/akarat/akarat-filter.jpeg"
+           alt="Akarat property filters" loading="lazy">
+    </a>
+
+    <a href="assets/images/akarat/akarat-property-type.jpeg" target="_blank">
+      <img src="assets/images/akarat/akarat-property-type.jpeg"
+           alt="Akarat property types" loading="lazy">
+    </a>
+
+    <a href="assets/images/akarat/akarat-filter-create%20alert%20screen.jpeg" target="_blank">
+      <img src="assets/images/akarat/akarat-filter-create%20alert%20screen.jpeg"
+           alt="Akarat create alert screen" loading="lazy">
+    </a>
+
+  </div>
+
+  <div class="project-info">
+    <h3>Akarat – Real Estate App</h3>
+    <p>
+      A real-estate mobile application developed from scratch.
+      Features include property discovery, advanced search and filters,
+      favorites, property details, enquiries, saved alerts and
+      multilingual support in English, Arabic and Turkish.
+    </p>
+
+    <div class="project-tech">
+      <span>Flutter</span>
+      <span>Dart</span>
+      <span>BLoC/Cubit</span>
+      <span>REST APIs</span>
+      <span>Google Maps</span>
+      <span>Firebase</span>
+    </div>
+  </div>
+
+</article>
 
         <article class="project-card">
           <div class="project-cover">
