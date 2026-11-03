@@ -1,217 +1,1151 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Simsima Gafoor • Flutter Developer</title>
-  <meta name="description" content="Flutter developer portfolio: apps, skills, contact." />
-  <meta name="theme-color" content="#0ea5e9" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Simsima Gafoor - Flutter Developer based in Dubai, UAE. Explore my mobile applications, technical skills and professional experience.">
+  <meta name="theme-color" content="#695aa6">
+  <title>Simsima Gafoor | Flutter Developer</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
   <style>
-    :root{
-      --bg:#0b1020; --card:#121833; --muted:#9aa4bf; --text:#eaf2ff;
-      --brand:#0ea5e9; --accent:#f43f5e; --radius:16px; --shadow:0 10px 25px rgba(0,0,0,.35); --maxw:1080px;
+    :root {
+      --primary: #695aa6;
+      --primary-dark: #51428c;
+      --heading: #343a40;
+      --text: #6c757d;
+      --background: #ffffff;
+      --light: #f8f7fc;
+      --border: #e9e7f0;
+      --shadow: 0 8px 30px rgba(50, 40, 90, .08);
     }
-    *{box-sizing:border-box} html,body{margin:0;height:100%;background:radial-gradient(1200px 600px at 80% -10%,rgba(14,165,233,.18),transparent),radial-gradient(800px 400px at -10% 10%,rgba(244,63,94,.14),transparent),var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial}
-    a{color:var(--brand);text-decoration:none} a:hover{text-decoration:underline}
-    .wrap{max-width:var(--maxw);margin-inline:auto;padding:28px}
-    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
-    .brand{display:flex;align-items:center;gap:12px}
-    .avatar{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--brand),var(--accent));display:grid;place-items:center;color:#fff;font-weight:700;letter-spacing:.5px}
-    nav{display:flex;gap:12px;flex-wrap:wrap}
-    nav a{padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06)}
-    .hero{margin:56px 0;display:grid;grid-template-columns:1.2fr .8fr;gap:28px}
-    .hero h1{font-size:clamp(28px,5vw,44px);line-height:1.15;margin:0}
-    .hero p{color:var(--muted);margin:10px 0 22px}
-    .cta{display:flex;gap:12px;flex-wrap:wrap}
-    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:12px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.06);box-shadow:var(--shadow)}
-    .btn.primary{background:linear-gradient(135deg,var(--brand),#22d3ee);border:none}
-    .btn:hover{filter:brightness(1.05)}
-    .mock{border-radius:var(--radius);border:1px solid rgba(255,255,255,.08);background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.02));min-height:260px;box-shadow:var(--shadow);position:relative;overflow:hidden}
-    .mock::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg, rgba(255,255,255,.04) 0 2px, transparent 2px 6px)}
-    .section{margin:64px 0}.section h2{font-size:22px;margin:0 0 12px}.section p.lead{color:var(--muted);margin:0 0 22px}
-    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
-    .card{grid-column:span 6;padding:18px;border-radius:var(--radius);background:var(--card);border:1px solid rgba(255,255,255,.06);box-shadow:var(--shadow)}
-    .card h3{margin:0 0 6px;font-size:18px}.meta{font-size:13px;color:var(--muted)}
-    .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
-    .chip{font-size:12px;padding:6px 8px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08)}
-    .skills{display:flex;flex-wrap:wrap;gap:10px}.skill{padding:10px 12px;border-radius:10px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08)}
-    .timeline{border-left:2px solid rgba(255,255,255,.12);padding-left:16px}.tl-item{margin:0 0 18px}.tl-item h4{margin:0}.tl-item .when{color:var(--muted);font-size:13px}
-    footer{margin:56px 0 24px;color:var(--muted);font-size:14px;text-align:center}
-    @media (max-width:900px){.hero{grid-template-columns:1fr}.card{grid-column:span 12}}
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; scroll-padding-top: 85px; }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      color: var(--text);
+      background: var(--background);
+      line-height: 1.7;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    button { font-family: inherit; }
+
+    .container {
+      width: min(1120px, 90%);
+      margin: auto;
+    }
+
+    .section { padding: 95px 0; }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 55px;
+    }
+
+    .section-heading .eyebrow {
+      color: var(--text);
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .section-heading h2 {
+      color: var(--primary);
+      font-size: 36px;
+      line-height: 1.3;
+      font-weight: 800;
+      margin: 5px 0 12px;
+    }
+
+    .section-heading p {
+      max-width: 620px;
+      margin: auto;
+      font-size: 15px;
+    }
+
+    /* Navigation */
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(255,255,255,.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0,0,0,.04);
+    }
+
+    nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 23px;
+      font-weight: 800;
+      color: var(--primary);
+      letter-spacing: -.5px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--heading);
+      font-size: 14px;
+      font-weight: 700;
+      transition: .25s;
+    }
+
+    .nav-links a:hover { color: var(--primary); }
+
+    .nav-cta {
+      background: var(--primary);
+      color: white !important;
+      padding: 10px 20px;
+      border-radius: 5px;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--primary);
+      font-size: 25px;
+      cursor: pointer;
+    }
+
+    /* Hero */
+
+    .hero {
+      min-height: 690px;
+      padding: 140px 0 90px;
+      background:
+        radial-gradient(circle at 85% 35%, rgba(105,90,166,.10), transparent 30%),
+        linear-gradient(120deg, #fff 60%, #f8f6ff);
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-content {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      align-items: center;
+      gap: 45px;
+    }
+
+    .hero-intro {
+      color: var(--text);
+      font-size: 19px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .hero h1 {
+      color: var(--heading);
+      font-size: clamp(42px, 6vw, 67px);
+      line-height: 1.12;
+      font-weight: 800;
+      letter-spacing: -2px;
+      margin-bottom: 15px;
+    }
+
+    .hero h1 span { color: var(--primary); }
+
+    .hero h2 {
+      color: #74717d;
+      font-size: clamp(21px, 3vw, 29px);
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+
+    .hero-description {
+      max-width: 550px;
+      margin-bottom: 28px;
+      font-size: 16px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      background: var(--primary);
+      color: #fff;
+      padding: 12px 23px;
+      border-radius: 5px;
+      font-size: 14px;
+      font-weight: 800;
+      transition: .25s;
+      border: 1px solid var(--primary);
+    }
+
+    .button:hover {
+      background: var(--primary-dark);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow);
+    }
+
+    .button-outline {
+      color: var(--primary);
+      background: transparent;
+      margin-left: 10px;
+    }
+
+    .button-outline:hover { color: white; }
+
+    .hero-visual {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .developer-art {
+      width: min(360px, 100%);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: linear-gradient(145deg, #eeeafd, #dcd4f6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .code-window {
+      width: 78%;
+      background: white;
+      border-radius: 13px;
+      padding: 24px;
+      box-shadow: 0 20px 50px rgba(64,48,120,.15);
+      transform: rotate(-5deg);
+    }
+
+    .window-dots { display: flex; gap: 6px; margin-bottom: 20px; }
+    .window-dots span {
+      width: 9px; height: 9px; border-radius: 50%;
+      background: #e4b6b6;
+    }
+    .window-dots span:nth-child(2) { background: #f0d18e; }
+    .window-dots span:nth-child(3) { background: #9dc9a9; }
+
+    .code-line {
+      height: 8px;
+      border-radius: 5px;
+      background: #e9e5f4;
+      margin: 12px 0;
+    }
+
+    .code-line:nth-child(3) { width: 75%; background: #c8bce9; }
+    .code-line:nth-child(4) { width: 90%; }
+    .code-line:nth-child(5) { width: 60%; background: #d6ccef; }
+    .code-line:nth-child(6) { width: 80%; }
+    .code-line:nth-child(7) { width: 45%; background: #c8bce9; }
+
+    .floating-icon {
+      position: absolute;
+      width: 58px;
+      height: 58px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: white;
+      color: var(--primary);
+      font-size: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .floating-icon.one { top: 15px; right: 5px; }
+    .floating-icon.two { bottom: 20px; left: 0; }
+
+    /* About */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      align-items: center;
+      gap: 65px;
+    }
+
+    .about-art {
+      min-height: 330px;
+      background: var(--light);
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      color: var(--primary);
+      font-size: 105px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-art::after {
+      content: "";
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      border: 2px solid rgba(105,90,166,.17);
+      border-radius: 50%;
+    }
+
+    .about-content h3 {
+      color: var(--heading);
+      font-size: 26px;
+      margin-bottom: 15px;
+    }
+
+    .about-content p { margin-bottom: 15px; }
+
+    .about-details {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 25px 0;
+    }
+
+    .detail {
+      font-size: 14px;
+      color: var(--heading);
+    }
+
+    .detail i { color: var(--primary); margin-right: 8px; }
+
+    /* Services */
+
+    .services { background: var(--light); }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .service-card {
+      background: white;
+      border: 1px solid var(--border);
+      padding: 35px 25px;
+      text-align: center;
+      border-radius: 8px;
+      transition: .3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow);
+      border-color: #d6ccef;
+    }
+
+    .service-card i {
+      font-size: 39px;
+      color: var(--primary);
+      margin-bottom: 20px;
+    }
+
+    .service-card h3 {
+      color: var(--heading);
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .service-card p { font-size: 14px; }
+
+    /* Skills */
+
+    .skills-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 45px;
+    }
+
+    .skill-group {
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      padding: 28px;
+      background: white;
+    }
+
+    .skill-group h3 {
+      color: var(--heading);
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill-tags span {
+      background: #f1eef9;
+      color: var(--primary-dark);
+      border: 1px solid #e5dff4;
+      padding: 8px 13px;
+      border-radius: 5px;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    /* Experience */
+
+    .experience { background: var(--light); }
+
+    .timeline {
+      max-width: 850px;
+      margin: auto;
+      border-left: 2px solid #d8d0ed;
+      padding-left: 30px;
+    }
+
+    .timeline-item {
+      position: relative;
+      background: white;
+      border: 1px solid var(--border);
+      padding: 25px;
+      border-radius: 8px;
+      margin-bottom: 22px;
+      box-shadow: 0 4px 18px rgba(50,40,90,.03);
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      background: var(--primary);
+      left: -38px;
+      top: 30px;
+      border: 3px solid white;
+      box-shadow: 0 0 0 2px #d8d0ed;
+    }
+
+    .timeline-item h3 { color: var(--heading); font-size: 19px; }
+    .timeline-item .company { color: var(--primary); font-weight: 800; }
+    .timeline-item .date { font-size: 13px; font-weight: 700; margin: 5px 0 12px; }
+    .timeline-item ul { padding-left: 20px; font-size: 14px; }
+    .timeline-item li { margin-bottom: 5px; }
+
+    /* Projects */
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+
+    .project-card {
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      overflow: hidden;
+      background: white;
+      transition: .3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+    }
+
+    .project-cover {
+      height: 215px;
+      display: grid;
+      place-items: center;
+      color: white;
+      font-size: 65px;
+      background: linear-gradient(135deg, #695aa6, #9888cf);
+      position: relative;
+    }
+
+    .project-card:nth-child(2) .project-cover {
+      background: linear-gradient(135deg, #354c74, #6888b5);
+    }
+
+    .project-card:nth-child(3) .project-cover {
+      background: linear-gradient(135deg, #477d85, #80b6a9);
+    }
+
+    .project-card:nth-child(4) .project-cover {
+      background: linear-gradient(135deg, #9b6d8e, #c49bb7);
+    }
+
+    .project-info { padding: 25px; }
+
+    .project-info h3 {
+      color: var(--heading);
+      font-size: 21px;
+      margin-bottom: 9px;
+    }
+
+    .project-info p { font-size: 14px; margin-bottom: 17px; }
+
+    .project-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .project-tech span {
+      font-size: 11px;
+      font-weight: 800;
+      background: #f1eef9;
+      color: var(--primary-dark);
+      padding: 5px 9px;
+      border-radius: 4px;
+    }
+
+    .project-note {
+      text-align: center;
+      font-size: 13px;
+      margin-top: 25px;
+    }
+
+    /* Education */
+
+    .education-card {
+      max-width: 750px;
+      margin: auto;
+      padding: 30px;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      display: flex;
+      align-items: flex-start;
+      gap: 22px;
+    }
+
+    .education-card i {
+      color: var(--primary);
+      font-size: 35px;
+    }
+
+    .education-card h3 { color: var(--heading); font-size: 20px; }
+    .education-card p { font-size: 14px; }
+
+    /* Contact */
+
+    .contact { background: var(--light); }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .contact-card {
+      background: white;
+      padding: 25px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      transition: .25s;
+    }
+
+    .contact-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-3px);
+    }
+
+    .contact-card i {
+      font-size: 25px;
+      color: var(--primary);
+      width: 35px;
+      text-align: center;
+    }
+
+    .contact-card h3 { color: var(--heading); font-size: 16px; }
+    .contact-card p { font-size: 13px; overflow-wrap: anywhere; }
+
+    .contact-cta {
+      text-align: center;
+      margin-top: 35px;
+    }
+
+    footer {
+      background: #34313f;
+      color: #ddd9e8;
+      text-align: center;
+      padding: 25px 15px;
+      font-size: 13px;
+    }
+
+    footer span { color: #c5b7f4; }
+
+    /* Responsive */
+
+    @media (max-width: 850px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 76px;
+        left: 0;
+        width: 100%;
+        padding: 22px 5%;
+        background: white;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+        box-shadow: var(--shadow);
+      }
+
+      .nav-links.open { display: flex; }
+      .menu-toggle { display: block; }
+      .hero-content { grid-template-columns: 1fr; }
+      .hero-visual { order: -1; }
+      .developer-art { width: 250px; }
+      .hero { text-align: center; }
+      .hero-description { margin-left: auto; margin-right: auto; }
+      .about-grid { grid-template-columns: 1fr; gap: 30px; }
+      .about-art { min-height: 250px; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 600px) {
+      .section { padding: 70px 0; }
+      .section-heading { margin-bottom: 35px; }
+      .section-heading h2 { font-size: 30px; }
+      .hero { min-height: auto; padding: 120px 0 75px; }
+      .hero h1 { letter-spacing: -1px; }
+      .button-outline { margin: 12px 0 0; }
+      .services-grid, .skills-layout, .projects-grid, .contact-grid {
+        grid-template-columns: 1fr;
+      }
+      .about-details { grid-template-columns: 1fr; }
+      .timeline { padding-left: 22px; }
+      .timeline-item::before { left: -30px; }
+      .education-card { flex-direction: column; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+      }
+    }
   </style>
 </head>
+
 <body>
-  <div class="wrap">
-    <header>
-      <div class="brand">
-        <div class="avatar">SG</div>
-        <div>
-          <strong>Simsima Gafoor</strong><br/>
-          <span class="meta">Flutter Developer • Dubai, UAE</span>
-        </div>
-      </div>
-      <nav>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#experience">Experience</a>
-        <a href="#contact">Contact</a>
-        <a href="resume.pdf" target="_blank">Resume ↓</a>
-      </nav>
-    </header>
 
-    <section class="hero">
+<header>
+  <nav class="container">
+    <a href="#home" class="logo">Simsima.</a>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">What I Do</a></li>
+      <li><a href="#skills">Expertise</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact" class="nav-cta">Let's Connect</a></li>
+    </ul>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
+  </nav>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="container hero-content">
       <div>
-        <h1>Building fast, beautiful cross‑platform apps with <span style="color:var(--brand)">Flutter</span>.</h1>
-        <p>I craft production‑ready mobile apps (iOS, Android) and Flutter Web experiences. I care about clean architecture, performance, and a delightful UX.</p>
-        <div class="cta">
-          <a class="btn primary" href="#projects">🚀 View Projects</a>
-          <a class="btn" href="https://github.com/simsima-101" target="_blank">★ GitHub</a>
-          <a class="btn" href="https://www.linkedin.com/in/simsima-gafoor-530b36188" target="_blank">↗ LinkedIn</a>
-        </div>
+        <p class="hero-intro">Hello, I'm</p>
+        <h1>Simsima <span>Gafoor</span></h1>
+        <h2>Flutter Developer | Mobile Application Developer</h2>
+        <p class="hero-description">
+          I build mobile experiences for Android and iOS using Flutter and Dart.
+          Based in Dubai, UAE, I enjoy turning ideas into practical,
+          user-friendly applications.
+        </p>
+        <a href="#about" class="button">
+          Discover My Work <i class="fas fa-arrow-right"></i>
+        </a>
+        <a href="#contact" class="button button-outline">
+          Contact Me
+        </a>
       </div>
-      <div class="mock" aria-hidden="true"></div>
-    </section>
 
-    <section id="projects" class="section">
-      <h2>Featured Projects</h2>
-      <p class="lead">Real apps that ship. Source links where possible.</p>
-
-      <div class="grid">
-        <article class="card">
-          <h3>Akarat – Real Estate Super App (UAE)</h3>
-          <div class="meta">Lead Flutter Dev & Product Architect • 2023 – Present • Akarat Real Estate Technologies LLC</div>
-          <p>Full‑featured real‑estate platform (iOS/Android) with Laravel REST backend for verified UAE listings, discovery, and lead management.</p>
-          <ul>
-            <li>Advanced search & filters (Buy/Rent/New Projects/Commercial), price, beds, amenities, furnished, area.</li>
-            <li>Favorites & saved searches for guest/logged‑in users (Provider + SharedPreferences) with API sync.</li>
-            <li>Property detail: image carousel, maps, amenities, payment plans, agent/agency info, call/WhatsApp/email.</li>
-            <li>Persistent bottom navigation; agents & agencies modules with pagination & caching.</li>
-            <li>Email OTP registration (Mailtrap), SecureStorage tokens; Trakheesi compliance support.</li>
-          </ul>
-          <div class="chips">
-            <span class="chip">Flutter 3.x</span><span class="chip">Provider</span><span class="chip">REST API (Laravel)</span><span class="chip">MySQL</span><span class="chip">Google Maps</span>
+      <div class="hero-visual">
+        <div class="developer-art">
+          <div class="code-window">
+            <div class="window-dots">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="code-line"></div>
+            <div class="code-line"></div>
+            <div class="code-line"></div>
+            <div class="code-line"></div>
+            <div class="code-line"></div>
+            <div class="code-line"></div>
           </div>
-          <p>Links: <a href="https://play.google.com/store/apps/details?id=com.akarat.drawerdemo" target="_blank">Android (Google Play)</a> · <a href="https://teams.live.com/l/message/19:uni01_p4eqeprppzemyarllndqr7tgzkzsl3dcilmnsdxwj2nqtafupaza@thread.v2/1753363340360?context=%7B%22contextType%22%3A%22chat%22%7D" target="_blank">iOS (current link)</a></p>
-          <p class="meta">Impact: 60% faster page load via caching; shipped to App Store & Play Store; active UAE user base.</p>
+          <div class="floating-icon one"><i class="fas fa-mobile-screen-button"></i></div>
+          <div class="floating-icon two"><i class="fas fa-code"></i></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">A little introduction</p>
+        <h2>Who I Am</h2>
+        <p>My background, approach and passion for building mobile applications.</p>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-art">
+          <i class="fas fa-laptop-code"></i>
+        </div>
+
+        <div class="about-content">
+          <h3>Mobile development is what I love building.</h3>
+          <p>
+            I'm a Flutter Developer based in Dubai, UAE, with nearly five years
+            of professional software development experience. My primary focus
+            is developing Android and iOS applications using Flutter and Dart.
+          </p>
+          <p>
+            I've worked on applications from the ground up, including real-estate
+            and industrial monitoring solutions. My experience includes UI
+            development, state management, API integration, Firebase services,
+            application architecture and release preparation.
+          </p>
+          <p>
+            I'm also exploring AI-powered application development through
+            personal projects, combining Flutter with Python-based backends
+            and language models.
+          </p>
+
+          <div class="about-details">
+            <div class="detail"><i class="fas fa-map-marker-alt"></i> Dubai, UAE</div>
+            <div class="detail"><i class="fas fa-briefcase"></i> Flutter Development</div>
+            <div class="detail"><i class="fas fa-mobile-alt"></i> Android & iOS</div>
+            <div class="detail"><i class="fas fa-clock"></i> Available Immediately</div>
+          </div>
+
+          <a href="resume.pdf" class="button" target="_blank" rel="noopener">
+            <i class="fas fa-download"></i> View My CV
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="section services" id="services">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">What I can help with</p>
+        <h2>What I Do</h2>
+        <p>Mobile application development from the user interface to app release.</p>
+      </div>
+
+      <div class="services-grid">
+        <article class="service-card">
+          <i class="fas fa-mobile-screen-button"></i>
+          <h3>Flutter App Development</h3>
+          <p>Building cross-platform mobile applications for Android and iOS using Flutter and Dart.</p>
         </article>
 
-        <article class="card">
-          <h3>EnWall – Smart Energy Management</h3>
-          <div class="meta">Flutter Developer & Product Designer • Riverpod • Realtime Charts</div>
-          <p>Energy monitoring app with real‑time solar/grid/battery data, interactive charts, and health indicators to optimize consumption.</p>
-          <ul>
-            <li>Live telemetry for generation, storage, and grid usage with animated charts.</li>
-            <li>Analytics dashboard for daily/monthly/total usage; color‑coded system health.</li>
-            <li>Supports solar, grid, and hybrid systems with responsive, accessible UI.</li>
-          </ul>
-          <div class="chips"><span class="chip">Flutter</span><span class="chip">Riverpod</span><span class="chip">fl_chart</span><span class="chip">HTTP</span></div>
-          <p><a href="https://github.com/simsima-101/enwall_flutter_app" target="_blank">Code (GitHub)</a></p>
-          <p class="meta">Outcome: Smooth real‑time UI and higher engagement via clear visual insights.</p>
+        <article class="service-card">
+          <i class="fas fa-layer-group"></i>
+          <h3>UI Development</h3>
+          <p>Creating responsive, reusable and user-friendly interfaces for different screen sizes.</p>
         </article>
 
-        <article class="card">
-          <h3>MovieApp – Real‑Time Movie Search</h3>
-          <div class="meta">Independent Project • Riverpod • Freezed • Dio • OMDb API</div>
-          <p>Clean‑architecture demo showcasing debounced search, detailed movie pages, and robust state/data layers.</p>
-          <ul>
-            <li>Instant search with debounced API calls; poster, synopsis, ratings, cast.</li>
-            <li>Riverpod for scalable state; Freezed models; Dio for networking & errors.</li>
-            <li>Responsive design for Android & iOS.</li>
-          </ul>
-          <div class="chips"><span class="chip">Flutter</span><span class="chip">Riverpod</span><span class="chip">Freezed</span><span class="chip">Dio</span></div>
-          <p><a href="https://github.com/simsima-101/movie_search_app" target="_blank">Code (GitHub)</a></p>
+        <article class="service-card">
+          <i class="fas fa-code-branch"></i>
+          <h3>App Architecture</h3>
+          <p>Working with BLoC, Cubit, Provider, Clean Architecture and maintainable code structures.</p>
         </article>
 
-        <article class="card">
-          <h3>Makeup Products Mini App</h3>
-          <div class="meta">Personal Project • Provider • REST</div>
-          <p>Lightweight e‑commerce showcase fetching products from a public API with clean, responsive UI and cart management.</p>
-          <ul>
-            <li>Product list & detail pages with images, description, and pricing.</li>
-            <li>Add‑to‑cart with Provider state; separation of concerns for scalability.</li>
-          </ul>
-          <div class="chips"><span class="chip">Flutter</span><span class="chip">Provider</span><span class="chip">HTTP</span></div>
-          <p><a href="https://github.com/simsima-101/Makeup-Products-App" target="_blank">Code (GitHub)</a></p>
+        <article class="service-card">
+          <i class="fas fa-cloud"></i>
+          <h3>API & Firebase Integration</h3>
+          <p>Connecting mobile apps with REST APIs, authentication, databases and Firebase services.</p>
         </article>
 
-        <article class="card">
-          <h3>To‑Do App</h3>
-          <div class="meta">Personal Project • SQFlite • Animations</div>
-          <p>A polished task manager with offline persistence, smooth micro‑interactions, and focus on clean architecture.</p>
-          <ul>
-            <li>Local storage with SQLite; fast list interactions.</li>
-            <li>Thoughtful UI animations to guide user actions.</li>
-          </ul>
-          <div class="chips"><span class="chip">Flutter</span><span class="chip">SQFlite</span><span class="chip">Testing</span></div>
-          <p><a href="https://github.com/simsima-101/To_Do_App" target="_blank">Code (GitHub)</a></p>
+        <article class="service-card">
+          <i class="fas fa-map-location-dot"></i>
+          <h3>Third-Party Integrations</h3>
+          <p>Integrating services such as Google Maps, OTP authentication and external APIs.</p>
+        </article>
+
+        <article class="service-card">
+          <i class="fas fa-rocket"></i>
+          <h3>App Release & Support</h3>
+          <p>Preparing builds, handling signing and releases, and supporting production applications.</p>
         </article>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="skills" class="section">
-      <h2>Skills</h2>
-      <p class="lead">I ship maintainable code and smooth UX.</p>
-      <div class="skills">
-        <span class="skill">Flutter • Dart</span>
-        <span class="skill">State Mgmt: Provider / Riverpod / Bloc</span>
-        <span class="skill">REST • GraphQL</span>
-        <span class="skill">Firebase (Auth, Firestore, FCM)</span>
-        <span class="skill">CI/CD (GitHub Actions)</span>
-        <span class="skill">Unit/Widget/Integration Testing</span>
-        <span class="skill">App Store / Play Console</span>
-        <span class="skill">Clean Architecture • SOLID</span>
+  <!-- SKILLS -->
+  <section class="section" id="skills">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Technologies I work with</p>
+        <h2>My Technical Expertise</h2>
+        <p>Tools and technologies used across my professional and personal projects.</p>
       </div>
-    </section>
 
-    <section id="experience" class="section">
-      <h2>Experience</h2>
+      <div class="skills-layout">
+        <div class="skill-group">
+          <h3><i class="fas fa-mobile-alt"></i> Mobile Development</h3>
+          <div class="skill-tags">
+            <span>Flutter</span>
+            <span>Dart</span>
+            <span>Android</span>
+            <span>iOS</span>
+            <span>Responsive UI</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h3><i class="fas fa-sitemap"></i> Architecture & State</h3>
+          <div class="skill-tags">
+            <span>BLoC</span>
+            <span>Cubit</span>
+            <span>Provider</span>
+            <span>Riverpod</span>
+            <span>Clean Architecture</span>
+            <span>MVVM</span>
+            <span>SOLID</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h3><i class="fas fa-server"></i> Backend & Integration</h3>
+          <div class="skill-tags">
+            <span>REST APIs</span>
+            <span>Dio</span>
+            <span>HTTP</span>
+            <span>JWT</span>
+            <span>Firebase</span>
+            <span>Firestore</span>
+            <span>FCM</span>
+            <span>Crashlytics</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h3><i class="fas fa-tools"></i> Development Tools</h3>
+          <div class="skill-tags">
+            <span>Android Studio</span>
+            <span>VS Code</span>
+            <span>Xcode</span>
+            <span>Postman</span>
+            <span>Git</span>
+            <span>GitHub</span>
+            <span>TestFlight</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h3><i class="fas fa-brain"></i> AI & Python Projects</h3>
+          <div class="skill-tags">
+            <span>Python</span>
+            <span>FastAPI</span>
+            <span>PostgreSQL</span>
+            <span>DistilBERT</span>
+            <span>Ollama</span>
+            <span>Claude API</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <h3><i class="fas fa-language"></i> Additional Technologies</h3>
+          <div class="skill-tags">
+            <span>Google Maps</span>
+            <span>Modbus RTU</span>
+            <span>RS-485</span>
+            <span>Arabic RTL UI</span>
+            <span>App Deployment</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="section experience" id="experience">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">My professional journey</p>
+        <h2>Work Experience</h2>
+        <p>My experience in mobile application development and software engineering.</p>
+      </div>
+
       <div class="timeline">
-        <div class="tl-item">
-          <h4>Flutter Developer • Bosporus Real Estate – Akarat App</h4>
-          <div class="when">02/2025 — Present · Dubai</div>
+
+        <article class="timeline-item">
+          <h3>Flutter Developer</h3>
+          <p class="company">Bosporus Real Estate – Dubai, UAE</p>
+          <p class="date">May 2025 – 2026</p>
           <ul>
-            <li>Shipped cross‑platform real estate app with full REST integration.</li>
-            <li>Firebase Auth + Google Sign‑In, Favorites with API sync, pagination, dynamic filtering.</li>
-            <li>Release management for App Store & Google Play; clean Git workflows.</li>
+            <li>Developed the Akarat real-estate mobile application from scratch as the Flutter mobile developer.</li>
+            <li>Integrated Dubai Land Department (DLD) APIs and Google Maps functionality.</li>
+            <li>Implemented property search, filters, favorites, enquiries, saved alerts and authentication.</li>
+            <li>Worked with BLoC/Cubit, Provider, Dio and Clean Architecture.</li>
+            <li>Supported English, Arabic and Turkish interfaces, including RTL layouts.</li>
+            <li>Prepared iOS builds and TestFlight releases.</li>
           </ul>
-        </div>
-        <div class="tl-item">
-          <h4>Flutter Developer • Enercap Power Industries LLC</h4>
-          <div class="when">10/2024 — 01/2025 · Dubai</div>
+        </article>
+
+        <article class="timeline-item">
+          <h3>Flutter Developer</h3>
+          <p class="company">Enercap Power Industries LLC – UAE</p>
+          <p class="date">October 2024 – January 2025</p>
           <ul>
-            <li>Built cross‑platform apps and Windows desktop monitoring tools.</li>
-            <li>Integrated Modbus RTU/RS‑485; real‑time visualization for energy systems.</li>
+            <li>Developed Flutter applications for Android and Windows.</li>
+            <li>Worked on industrial monitoring dashboard interfaces.</li>
+            <li>Worked with Modbus RTU and RS-485 communication integration.</li>
           </ul>
-        </div>
-        <div class="tl-item">
-          <h4>Software Engineer (Flutter) • UST</h4>
-          <div class="when">02/2022 — 04/2024 · Trivandrum</div>
+        </article>
+
+        <article class="timeline-item">
+          <h3>Software Engineer</h3>
+          <p class="company">UST Global – Trivandrum, India</p>
+          <p class="date">February 2022 – April 2024</p>
           <ul>
-            <li>Task Manager (+25% productivity), Incident Management (JIRA), payments & OTP/email flows.</li>
+            <li>Worked on enterprise software production support and scripting tasks.</li>
+            <li>Contributed to Flutter-based internal task-management applications.</li>
+            <li>Worked with teams to support application requirements and issue resolution.</li>
           </ul>
-        </div>
-        <div class="tl-item">
-          <h4>Flutter Developer • Goyalo Safaris</h4>
-          <div class="when">10/2020 — 10/2021 · Kochi</div>
+        </article>
+
+        <article class="timeline-item">
+          <h3>Flutter Developer</h3>
+          <p class="company">Goyalo Safaris – Kochi, India</p>
+          <p class="date">October 2020 – October 2021</p>
           <ul>
-            <li>eCommerce app with secure payments; voice search for accessibility.</li>
+            <li>Worked on Flutter mobile application development.</li>
+            <li>Contributed to application UI implementation and mobile features.</li>
           </ul>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">A selection of my work</p>
+        <h2>Projects I've Built</h2>
+        <p>A look at selected professional and personal application projects.</p>
+      </div>
+
+      <div class="projects-grid">
+
+        <article class="project-card">
+          <div class="project-cover">
+            <i class="fas fa-building"></i>
+          </div>
+          <div class="project-info">
+            <h3>Akarat – Real Estate App</h3>
+            <p>
+              A real-estate mobile application developed from scratch, with
+              property discovery, search and filters, favorites, enquiries,
+              saved alerts, maps and multilingual support.
+            </p>
+            <div class="project-tech">
+              <span>Flutter</span><span>Dart</span><span>BLoC/Cubit</span>
+              <span>REST APIs</span><span>Google Maps</span><span>Firebase</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-cover">
+            <i class="fas fa-chart-pie"></i>
+          </div>
+          <div class="project-info">
+            <h3>AI Feedback Analyzer</h3>
+            <p>
+              A personal project that analyzes customer feedback using
+              sentiment classification and AI-assisted insights. Includes
+              CSV uploads, a sentiment dashboard, recommended actions
+              and topic-based feedback questions.
+            </p>
+            <div class="project-tech">
+              <span>Flutter</span><span>Python</span><span>FastAPI</span>
+              <span>PostgreSQL</span><span>DistilBERT</span><span>Ollama</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-cover">
+            <i class="fas fa-industry"></i>
+          </div>
+          <div class="project-info">
+            <h3>Industrial Monitoring App</h3>
+            <p>
+              A Flutter-based Android and Windows application for industrial
+              monitoring, involving dashboard interfaces and communication
+              with equipment through Modbus RTU and RS-485.
+            </p>
+            <div class="project-tech">
+              <span>Flutter</span><span>Dart</span>
+              <span>Android</span><span>Windows</span><span>Modbus</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-cover">
+            <i class="fas fa-mobile-screen"></i>
+          </div>
+          <div class="project-info">
+            <h3>Other Flutter Applications</h3>
+            <p>
+              Additional mobile application projects from my development
+              journey, including MovieApp, EnWall, Makeup and To-Do.
+              More project details and visual demonstrations will be added.
+            </p>
+            <div class="project-tech">
+              <span>Flutter</span><span>Dart</span><span>Mobile UI</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <p class="project-note">
+        Project screenshots, demo videos and source-code links will be added here.
+      </p>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section class="section" id="education">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Academic background</p>
+        <h2>Education</h2>
+      </div>
+
+      <div class="education-card">
+        <i class="fas fa-graduation-cap"></i>
+        <div>
+          <h3>Bachelor of Technology – Information Technology</h3>
+          <p>College of Engineering Thalassery</p>
+          <p>APJ Abdul Kalam Technological University, Kerala</p>
+          <p>July 2020</p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="contact" class="section">
-      <h2>Contact</h2>
-      <p class="lead">Open to full‑time & freelance. Best way to reach me:</p>
-      <p>
-        <a class="btn primary" href="mailto:simsimagafoor1@gmail.com">✉ Email Me</a>
-        <a class="btn" href="https://wa.me/971581542529" target="_blank">💬 WhatsApp</a>
-      </p>
-      <p class="meta">Based in Dubai, open to remote. Average response time: 24h.</p>
-    </section>
+  <!-- CONTACT -->
+  <section class="section contact" id="contact">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Have an opportunity or an idea?</p>
+        <h2>Let's Connect</h2>
+        <p>
+          I'm currently exploring Flutter Developer opportunities in the UAE
+          and remote roles. I'd be happy to connect and discuss opportunities.
+        </p>
+      </div>
 
-    <footer>© <span id="y"></span> Simsima Gafoor · Built with ♥ and Flutter energy</footer>
-  </div>
-  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+      <div class="contact-grid">
+
+        <a class="contact-card" href="mailto:simsimagafoor1@gmail.com">
+          <i class="fas fa-envelope"></i>
+          <div>
+            <h3>Email</h3>
+            <p>simsimagafoor1@gmail.com</p>
+          </div>
+        </a>
+
+        <a class="contact-card" href="https://wa.me/971581542529" target="_blank" rel="noopener">
+          <i class="fab fa-whatsapp"></i>
+          <div>
+            <h3>WhatsApp</h3>
+            <p>Let's talk</p>
+          </div>
+        </a>
+
+        <a class="contact-card" href="https://www.linkedin.com/in/simsima-gafoor-530b36188" target="_blank" rel="noopener">
+          <i class="fab fa-linkedin-in"></i>
+          <div>
+            <h3>LinkedIn</h3>
+            <p>Connect professionally</p>
+          </div>
+        </a>
+
+        <a class="contact-card" href="https://github.com/simsima-101" target="_blank" rel="noopener">
+          <i class="fab fa-github"></i>
+          <div>
+            <h3>GitHub</h3>
+            <p>Explore my code</p>
+          </div>
+        </a>
+
+      </div>
+
+      <div class="contact-cta">
+        <a href="mailto:simsimagafoor1@gmail.com" class="button">
+          Get in Touch <i class="fas fa-paper-plane"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>Designed and developed by <span>Simsima Gafoor</span> · © <span id="year"></span></p>
+  <p>Flutter Developer | Dubai, UAE</p>
+</footer>
+
+<script>
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+    const icon = menuToggle.querySelector('i');
+    icon.classList.toggle('fa-bars');
+    icon.classList.toggle('fa-xmark');
+  });
+
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      const icon = menuToggle.querySelector('i');
+      icon.classList.add('fa-bars');
+      icon.classList.remove('fa-xmark');
+    });
+  });
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
