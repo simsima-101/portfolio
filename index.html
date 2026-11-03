@@ -407,177 +407,276 @@
     .projects-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 40px;
+      gap: 48px;
     }
 
-    .project-card {
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      overflow: hidden;
-      background: white;
-      transition: .3s;
-    }
-    .project-card:hover { box-shadow: var(--shadow); }
-
-    /* --- Akarat Featured Gallery --- */
-    .project-featured {
+    /* ===== LIVING DEVICE SHOWCASE ===== */
+    .device-showcase {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 0;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+      background: linear-gradient(145deg, #f9f7fd, #f0ecf9);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 48px 40px;
+      position: relative;
+      overflow: hidden;
     }
 
-    .gallery-side {
-      background: #f4f1fa;
-      padding: 28px 24px 24px;
+    .device-showcase::before {
+      content: "";
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      background: radial-gradient(circle, rgba(105,90,166,.12), transparent 70%);
+      top: -80px;
+      left: -60px;
+      pointer-events: none;
+    }
+
+    /* Phone Frame */
+    .phone-wrapper {
       display: flex;
       flex-direction: column;
+      align-items: center;
+      gap: 28px;
+      position: relative;
+      z-index: 2;
     }
 
-    .gallery-main-wrap {
+    .phone {
       position: relative;
-      background: #1a1625;
-      border-radius: 16px;
+      width: 280px;
+      height: 570px;
+      background: linear-gradient(160deg, #2c2a33, #1a1820);
+      border-radius: 44px;
+      padding: 12px;
+      box-shadow:
+        0 0 0 2px #3d3a45,
+        0 25px 50px -12px rgba(0,0,0,.45),
+        0 0 40px rgba(105,90,166,.18);
+      transition: transform .4s ease, box-shadow .4s ease;
+    }
+
+    .phone:hover {
+      transform: translateY(-6px) scale(1.02);
+      box-shadow:
+        0 0 0 2px #3d3a45,
+        0 35px 60px -12px rgba(0,0,0,.5),
+        0 0 50px rgba(105,90,166,.25);
+    }
+
+    /* Side buttons */
+    .phone::before {
+      content: "";
+      position: absolute;
+      left: -3px;
+      top: 110px;
+      width: 3px;
+      height: 28px;
+      background: #3d3a45;
+      border-radius: 2px 0 0 2px;
+    }
+    .phone::after {
+      content: "";
+      position: absolute;
+      left: -3px;
+      top: 150px;
+      width: 3px;
+      height: 52px;
+      background: #3d3a45;
+      border-radius: 2px 0 0 2px;
+    }
+
+    .phone-inner {
+      width: 100%;
+      height: 100%;
+      background: #000;
+      border-radius: 34px;
       overflow: hidden;
-      flex: 1;
+      position: relative;
+    }
+
+    /* Dynamic Island */
+    .dynamic-island {
+      position: absolute;
+      top: 11px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 95px;
+      height: 28px;
+      background: #000;
+      border-radius: 20px;
+      z-index: 10;
+    }
+
+    .phone-screen {
+      width: 100%;
+      height: 100%;
+      background: #111;
       display: flex;
       align-items: center;
       justify-content: center;
-      min-height: 420px;
-      box-shadow: inset 0 0 0 1px rgba(255,255,255,.06);
+      overflow: hidden;
     }
 
-    .gallery-main-wrap img {
-      max-height: 400px;
-      width: auto;
-      max-width: 92%;
-      object-fit: contain;
-      border-radius: 10px;
-      transition: opacity .25s ease;
+    .phone-screen img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      transition: opacity .35s ease;
     }
 
-    .gallery-nav {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 40px; height: 40px;
+    /* Gallery Controls */
+    .gallery-controls {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      width: 100%;
+    }
+
+    .gallery-nav-row {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .gallery-btn {
+      width: 42px;
+      height: 42px;
       border-radius: 50%;
-      background: rgba(255,255,255,.92);
       border: none;
+      background: white;
       color: var(--primary);
       font-size: 15px;
       display: grid;
       place-items: center;
-      box-shadow: 0 4px 14px rgba(0,0,0,.15);
-      transition: .2s;
-      z-index: 2;
+      box-shadow: 0 4px 14px rgba(80,60,140,.12);
+      transition: .25s;
     }
-    .gallery-nav:hover {
+    .gallery-btn:hover {
       background: var(--primary);
       color: white;
+      transform: scale(1.08);
     }
-    .gallery-nav.prev { left: 12px; }
-    .gallery-nav.next { right: 12px; }
+
+    .gallery-dots {
+      display: flex;
+      gap: 7px;
+    }
+    .gallery-dots span {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #cfc6e8;
+      transition: .25s;
+      cursor: pointer;
+    }
+    .gallery-dots span.active {
+      background: var(--primary);
+      width: 22px;
+      border-radius: 10px;
+    }
 
     .gallery-thumbs {
       display: flex;
       gap: 10px;
-      margin-top: 16px;
       overflow-x: auto;
-      padding-bottom: 4px;
-      scrollbar-width: thin;
-      scrollbar-color: #cfc6e8 transparent;
+      max-width: 100%;
+      padding: 6px 4px;
+      scrollbar-width: none;
     }
-    .gallery-thumbs::-webkit-scrollbar { height: 4px; }
-    .gallery-thumbs::-webkit-scrollbar-thumb {
-      background: #cfc6e8;
-      border-radius: 4px;
-    }
+    .gallery-thumbs::-webkit-scrollbar { display: none; }
 
     .thumb {
       flex-shrink: 0;
-      width: 58px;
-      height: 100px;
-      border-radius: 8px;
+      width: 48px;
+      height: 84px;
+      border-radius: 10px;
       overflow: hidden;
       cursor: pointer;
       border: 2.5px solid transparent;
-      opacity: .55;
+      opacity: .5;
       transition: .25s;
-      background: white;
+      background: #1a1820;
     }
     .thumb img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
-    .thumb:hover { opacity: .85; }
+    .thumb:hover { opacity: .8; }
     .thumb.active {
       opacity: 1;
       border-color: var(--primary);
       box-shadow: 0 0 0 1px var(--primary);
     }
 
-    .project-info {
-      padding: 36px 32px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+    /* Project Info */
+    .showcase-info {
+      position: relative;
+      z-index: 2;
     }
-    .project-info .badge {
+    .showcase-info .badge {
       display: inline-block;
-      background: #efeafc;
+      background: white;
       color: var(--primary);
       font-size: 11px;
       font-weight: 800;
       letter-spacing: 0.8px;
       text-transform: uppercase;
-      padding: 5px 12px;
+      padding: 6px 14px;
       border-radius: 20px;
-      margin-bottom: 14px;
-      width: fit-content;
+      margin-bottom: 16px;
+      box-shadow: 0 2px 10px rgba(80,60,140,.08);
     }
-    .project-info h3 {
+    .showcase-info h3 {
       color: var(--heading);
-      font-size: 24px;
+      font-size: 28px;
       font-weight: 800;
-      margin-bottom: 12px;
-      letter-spacing: -0.3px;
+      margin-bottom: 14px;
+      letter-spacing: -0.4px;
     }
-    .project-info p {
-      font-size: 15px;
-      margin-bottom: 22px;
+    .showcase-info p {
+      font-size: 15.5px;
+      margin-bottom: 24px;
       color: var(--text);
+      line-height: 1.75;
     }
     .project-tech {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
+      margin-bottom: 28px;
     }
     .project-tech span {
-      font-size: 12px;
+      font-size: 12.5px;
       font-weight: 800;
-      background: #f0ecf9;
+      background: white;
       color: var(--primary-dark);
-      padding: 6px 11px;
-      border-radius: 6px;
+      padding: 7px 13px;
+      border-radius: 8px;
+      border: 1px solid #e4def3;
     }
 
-    /* Other project cards (compact) */
+    /* Secondary Projects */
     .projects-secondary {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 20px;
-      margin-top: 8px;
     }
     .project-card-sm {
       border: 1px solid var(--border);
-      border-radius: 14px;
+      border-radius: 16px;
       overflow: hidden;
       background: white;
       transition: .3s;
     }
     .project-card-sm:hover {
-      transform: translateY(-5px);
+      transform: translateY(-6px);
       box-shadow: var(--shadow);
     }
     .project-cover {
@@ -601,6 +700,8 @@
     }
     .project-card-sm .project-info h3 {
       font-size: 17px;
+      font-weight: 800;
+      color: var(--heading);
       margin-bottom: 8px;
     }
     .project-card-sm .project-info p {
@@ -612,7 +713,7 @@
       text-align: center;
       font-size: 13px;
       color: #999;
-      margin-top: 36px;
+      margin-top: 40px;
     }
 
     /* ========== EDUCATION ========== */
@@ -694,7 +795,7 @@
     footer span { color: #b8a9ef; }
 
     /* ========== RESPONSIVE ========== */
-    @media (max-width: 900px) {
+    @media (max-width: 960px) {
       .nav-links {
         display: none;
         position: absolute;
@@ -721,8 +822,12 @@
       .services-grid { grid-template-columns: 1fr 1fr; }
       .skills-layout { grid-template-columns: 1fr; }
 
-      .project-featured { grid-template-columns: 1fr; }
-      .gallery-main-wrap { min-height: 360px; }
+      .device-showcase {
+        grid-template-columns: 1fr;
+        padding: 36px 24px;
+        gap: 36px;
+      }
+      .phone { width: 250px; height: 510px; }
       .projects-secondary { grid-template-columns: 1fr; }
     }
 
@@ -736,9 +841,10 @@
       .timeline { padding-left: 22px; }
       .timeline-item::before { left: -30px; }
       .education-card { flex-direction: column; gap: 14px; }
-      .gallery-main-wrap { min-height: 300px; }
-      .gallery-main-wrap img { max-height: 280px; }
-      .thumb { width: 48px; height: 84px; }
+      .phone { width: 220px; height: 450px; border-radius: 38px; }
+      .phone-inner { border-radius: 28px; }
+      .dynamic-island { width: 80px; height: 24px; top: 9px; }
+      .thumb { width: 42px; height: 74px; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -1018,18 +1124,28 @@
       </div>
 
       <div class="projects-grid">
-        <!-- AKARAT – Featured with interactive gallery -->
-        <article class="project-card">
-          <div class="project-featured">
-            <div class="gallery-side">
-              <div class="gallery-main-wrap">
-                <button class="gallery-nav prev" id="akaratPrev" aria-label="Previous screenshot">
+
+        <!-- ========== LIVING DEVICE SHOWCASE - AKARAT ========== -->
+        <div class="device-showcase">
+          <div class="phone-wrapper">
+            <div class="phone">
+              <div class="phone-inner">
+                <div class="dynamic-island"></div>
+                <div class="phone-screen">
+                  <img id="akaratMain"
+                       src="assets/images/akarat/akarat-home-screen.jpeg"
+                       alt="Akarat home screen">
+                </div>
+              </div>
+            </div>
+
+            <div class="gallery-controls">
+              <div class="gallery-nav-row">
+                <button class="gallery-btn" id="akaratPrev" aria-label="Previous">
                   <i class="fas fa-chevron-left"></i>
                 </button>
-                <img id="akaratMain"
-                     src="assets/images/akarat/akarat-home-screen.jpeg"
-                     alt="Akarat home screen">
-                <button class="gallery-nav next" id="akaratNext" aria-label="Next screenshot">
+                <div class="gallery-dots" id="akaratDots"></div>
+                <button class="gallery-btn" id="akaratNext" aria-label="Next">
                   <i class="fas fa-chevron-right"></i>
                 </button>
               </div>
@@ -1061,30 +1177,30 @@
                 </div>
               </div>
             </div>
+          </div>
 
-            <div class="project-info">
-              <span class="badge">Featured Project</span>
-              <h3>Akarat – Real Estate App</h3>
-              <p>
-                A full-featured real-estate mobile application developed from scratch.
-                Includes property discovery, advanced search & filters, favorites,
-                enquiries, saved alerts, Google Maps integration and multilingual
-                support (English, Arabic & Turkish) with RTL layouts.
-              </p>
-              <div class="project-tech">
-                <span>Flutter</span>
-                <span>Dart</span>
-                <span>BLoC / Cubit</span>
-                <span>REST APIs</span>
-                <span>Google Maps</span>
-                <span>Firebase</span>
-                <span>Clean Architecture</span>
-              </div>
+          <div class="showcase-info">
+            <span class="badge">Featured Project</span>
+            <h3>Akarat – Real Estate App</h3>
+            <p>
+              A complete real-estate mobile application built from scratch.
+              Features advanced property search & filters, favorites, enquiries,
+              saved alerts, Google Maps, Dubai Land Department API integration,
+              and full multilingual support (English, Arabic & Turkish) with RTL layouts.
+            </p>
+            <div class="project-tech">
+              <span>Flutter</span>
+              <span>Dart</span>
+              <span>BLoC / Cubit</span>
+              <span>REST APIs</span>
+              <span>Google Maps</span>
+              <span>Firebase</span>
+              <span>Clean Architecture</span>
             </div>
           </div>
-        </article>
+        </div>
 
-        <!-- Other projects -->
+        <!-- Other Projects -->
         <div class="projects-secondary">
           <article class="project-card-sm">
             <div class="project-cover">
@@ -1245,18 +1361,28 @@
   // Year
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  // Header shadow on scroll
+  // Header shadow
   const header = document.getElementById('header');
   window.addEventListener('scroll', () => {
     header.classList.toggle('scrolled', window.scrollY > 20);
   });
 
-  // ========== Akarat Gallery ==========
+  // ========== Living Device Showcase ==========
   const mainImg = document.getElementById('akaratMain');
   const thumbs = document.querySelectorAll('#akaratThumbs .thumb');
   const prevBtn = document.getElementById('akaratPrev');
   const nextBtn = document.getElementById('akaratNext');
+  const dotsContainer = document.getElementById('akaratDots');
   let currentIndex = 0;
+
+  // Create dots
+  thumbs.forEach((_, i) => {
+    const dot = document.createElement('span');
+    if (i === 0) dot.classList.add('active');
+    dot.addEventListener('click', () => showImage(i));
+    dotsContainer.appendChild(dot);
+  });
+  const dots = dotsContainer.querySelectorAll('span');
 
   function showImage(index) {
     if (index < 0) index = thumbs.length - 1;
@@ -1264,14 +1390,16 @@
     currentIndex = index;
 
     const src = thumbs[currentIndex].dataset.src;
+
     mainImg.style.opacity = '0';
     setTimeout(() => {
       mainImg.src = src;
       mainImg.alt = thumbs[currentIndex].querySelector('img').alt;
       mainImg.style.opacity = '1';
-    }, 150);
+    }, 180);
 
     thumbs.forEach((t, i) => t.classList.toggle('active', i === currentIndex));
+    dots.forEach((d, i) => d.classList.toggle('active', i === currentIndex));
   }
 
   thumbs.forEach((thumb, i) => {
@@ -1281,7 +1409,7 @@
   prevBtn.addEventListener('click', () => showImage(currentIndex - 1));
   nextBtn.addEventListener('click', () => showImage(currentIndex + 1));
 
-  // Optional: keyboard support when gallery is in view
+  // Keyboard navigation
   document.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowLeft') showImage(currentIndex - 1);
     if (e.key === 'ArrowRight') showImage(currentIndex + 1);
