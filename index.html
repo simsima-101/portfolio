@@ -842,6 +842,20 @@
       margin-bottom: 14px;
     }
 
+    /* EnWall project video */
+.project-demo-video {
+  width: 100%;
+  margin: 15px 0;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.project-demo-video video {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+}
+
     .project-note {
       text-align: center;
       font-size: 13px;
@@ -1519,23 +1533,38 @@
             </div>
           </article>
 
-          <article class="project-card-sm">
-            <div class="project-cover">
-              <i class="fas fa-industry"></i>
-            </div>
-            <div class="project-info">
-              <h3>Industrial Monitoring</h3>
-              <p>
-                Flutter app for Android & Windows with industrial dashboards
-                and Modbus RTU / RS-485 equipment communication.
-              </p>
-              <div class="project-tech">
-                <span>Flutter</span>
-                <span>Modbus</span>
-                <span>Windows</span>
-              </div>
-            </div>
-          </article>
+         
+<article class="project-card-sm">
+  <div class="project-cover">
+    <i class="fas fa-industry"></i>
+  </div>
+
+  <div class="project-info">
+    <h3>EnWall – Smart Energy Management</h3>
+
+    <p>
+      Flutter-based industrial energy monitoring application
+      for Android and Windows, featuring live dashboard values,
+      battery monitoring, system parameters and Modbus RTU /
+      RS-485 communication.
+    </p>
+
+    <div class="project-demo-video">
+      <video controls preload="metadata">
+        <source src="assets/videos/enwall-demo.mp4" type="video/mp4">
+        Your browser does not support video playback.
+      </video>
+    </div>
+
+    <div class="project-tech">
+      <span>Flutter</span>
+      <span>Modbus</span>
+      <span>Windows</span>
+      <span>RS-485</span>
+    </div>
+  </div>
+</article>
+
 
           <article class="project-card-sm">
             <div class="project-cover">
